@@ -1,0 +1,371 @@
+#mapContainer {
+    position: relative;
+    width: 100%;
+    height: 64vh;
+    background: #212121; /* Dark background for better visibility */
+}
+
+.map-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #8a1724; /* Button background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners for aesthetic */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.left-button {
+    left: 10px;
+    background-image: radial-gradient(circle, rgba(0, 76, 153, 0.7) 10%, transparent);
+    background-position: center;
+    background-size: 0%; /* Start with no visible gradient */
+    transition: background-size 0.5s ease-out; /* Smooth transition for the gradient effect */
+}
+
+.right-button {
+    right: 10px;
+    background-image: radial-gradient(circle, rgba(241, 6, 6, 0.7) 10%, transparent);
+    background-position: center;
+    background-size: 0%; /* Start with no visible gradient */
+    transition: background-size 0.5s ease-out; /* Smooth transition for the gradient effect */
+}
+
+.map-button:hover {
+    background-size: 150%; /* Expand the gradient to cover more area on hover */
+}
+
+.map-button span {
+    margin: 0 5px; /* Adjust spacing around text */
+    
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+.video-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #333;
+}
+
+
+video {
+    width: 500px; /* Adjust as needed */
+    height: auto;
+}
+
+#worldMap {
+    width: 100%;
+    height: auto; /* Adjust based on your image aspect ratio */
+}
+
+.circle {
+    position:absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(202, 56, 56);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: white;
+}
+.nato-circle {
+    background-color: blue; /* Specific style for NATO circle */
+}
+
+.circle:hover {
+    transform: scale(1.3); /* Enlarge the circle on hover */
+}
+
+.circle span {
+    display: none;
+    position: absolute;
+    width: 1s20px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.circle:hover span {
+    display: block;
+}
+body{
+    background-color: #000000;
+    margin: 0px;
+}
+main{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 0; /* Reduce space between H1 and navbar */
+    padding-bottom: 10px; /* Adjust padding as needed */
+    font-size: 60px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Aligns items vertically */
+    flex-wrap: wrap; /* Allows items to wrap if needed */
+    background-color: #8a1724;
+    border: 2px solid #080808;
+    padding: 0px 0; /* Adjust padding to reduce space */
+}
+
+.nav-logo {
+    position: absolute; /* Positions logo absolutely within the navbar */
+    left: 750px; /* Space from the left edge of the navbar */
+    top: 50px; /* Space from the top of the navbar */
+    height: 50px;
+    
+}
+
+ul {
+    display: flex;
+    justify-content: center; /* Center the list items horizontally */
+    width: 100%; /* Full width to center correctly */
+    padding: 0;
+    list-style: none;
+    margin-top: 20px; /* Space below the H1 */
+}
+
+li {
+    margin: 0 25px; /* Space between items */
+    font-size: 22px;
+    padding: 0px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0px;
+}
+
+a:hover {
+    background-color: #b83737;
+}
+h4 {
+    color: #ffffff;
+    padding: 12px 0;
+}
+
+#timelineContainer {
+    position: absolute;
+    bottom: 20px; /* Adjust spacing from the bottom of the mapContainer */
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 140px 0;
+    
+}
+.event-info { /* 46 years*/
+    position: absolute;
+    top: 465px; /* Adjust this value to position the text lower or higher */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Ensures text is visible on a dark background */
+    font-size: 24px; /* Adjust based on your design needs */
+    font-weight: bold;
+    text-align: center;
+    z-index: 10; /* Ensures the text appears above the map and other elements */
+    background: rgba(0, 0, 0, 0.5); /* Optional: adds a semi-transparent background for better visibility */
+    padding: 5px 10px; /* Adds some padding around the text */
+    border-radius: 5px; /* Optional: adds rounded corners to the text background */
+}
+
+.slider {
+    width: 80%; /* Control the width of the slider */
+    margin: auto; /* Centers the slider */
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+#timelineContainer p,
+#timelineContainer span {
+    color: white; /* Set text color to white */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+/*#intro-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: none;  /* Images are initially hidden 
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }  /* Quickly zoom in and fade out 
+}
+
+#title-screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: white;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    z-index: 1010;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;  /* Smooth transition for text appearance 
+}
+
+
+
+
+/* Delay each image's animation start time 
+.intro-image:nth-child(1) { animation-delay: 0s; }
+.intro-image:nth-child(2) { animation-delay: 2; }
+.intro-image:nth-child(3) { animation-delay: 4s; }
+.intro-image:nth-child(4) { animation-delay: 6s; }
+.intro-image:nth-child(5) { animation-delay: 8s; }
+.intro-image:nth-child(6) { animation-delay: 10s; }
+.intro-image:nth-child(7) { animation-delay: 12s; }
+.intro-image:nth-child(8) { animation-delay: 14s; }*/
+
+/* Continue for each additional image */
+
+#tour-info {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.circle.flashing {
+    animation: flash 1.5s infinite;
+}
+
+@keyframes flash {
+    0%, 100% { background-color: #CA3838; } /* original red */
+    50% { background-color: #FFFF00; } /* yellow */
+}
+
+
+/* General styles for the video container */
+#video-container {
+    position: relative;
+    width: 100%; /* Adjust based on your layout */
+    height: 400px; /* Adjust based on your layout */
+    background-color: #000;
+    display: none; /* Hidden by default, shown during the tour */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Styling for the 'Next' button */
+.next-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 20px; /* Position inside the video container */
+    transition: background-color 0.3s;
+}
+
+.next-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Styling for active event circles */
+.circle.active {
+    border: 2px solid yellow; /* Highlight active circle */
+}
+
+/* Info box styling */
+.info-box {
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    left: 100%; /* Position next to the event circle */
+    margin-left: 10px; /* Spacing from the circle */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px; /* Fixed width, adjust as needed */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Optional: Adds shadow for better visibility */
+    z-index: 100; /* Ensures it appears above other elements */
+}
+
+/* Ensures circles with additional info are visible above other elements */
+.circle {
+    position: relative;
+    z-index: 10; /* Lower than info boxes but above other items */
+}
+
+/* Flashing effect for the starting event */
+.flashing {
+    animation: flash 1s infinite alternate;
+}
+
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Historical Map - The Cold War</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Cold War</h1>
+    <nav class="navbar">
+        <img src="ICon.png" alt="Logo" class="nav-logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">More</a></li>
+        </ul>
+    </nav>
+
+
+    <!--<div id="intro-animation">
+        
+        <div class="intro-image" style="background-image: url('image1.jpg');"></div>
+        <div class="intro-image" style="background-image: url('image2.jpg');"></div>
+        <div class="intro-image" style="background-image: url('image3.jpg');"></div>
+        <div class="intro-image" style="background-image: url('image4.jpg');"></div>
+        <div class="intro-image" style="background-image: url('image5.jpg');"></div>
+        <div class="intro-image" style="background-image: url('image6.jpg');"></div>
+        <div class="intro-image" style="background-image: url('image7.jpg');"></div>
+        <div class="intro-image" style="background-image: url('image8.jpg');"></div>
+        
+        
+    </div>
+    <div id="title-screen" style="display: none;">Cold War</div>
+    <div id="mapContainer" style="visibility: hidden;">-->
+
+    
+    <div id="tour-info">
+        <p id="tour-text">Some information about the event...</p>
+    </div>
+
+
+
+    <div id="mapContainer">
+        <button class="map-button left-button"><span>Join the West</span> </button>
+        <img src="map.jpg" alt="World Map" id="worldMap">
+        <div class="event-info">46 Years of "War"</div>
+        <!-- Events are added here via JavaScript -->
+        <button class="map-button right-button"> <span>Join the East</span></button>
+
+        <nav class="navbar">
+            <ul>
+                <h4></h4>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="leftVideo" class="video-popup" style="display:none;">
+        <span class="close-button">&times;</span>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8MQ59Ij5fkM" title="YouTube video player"
+            frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div id="rightVideo" class="video-popup" style="display:none;">
+        <span class="close-button">&times;</span>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/-OMvRNFTrbM" title="YouTube video player"
+            frameborder="0" allowfullscreen></iframe>
+    </div>
+    <!-- interactive slider -->
+    <div id="timelineContainer" style="position: absolute; bottom: 0; width: 100%;">
+        <input type="range" min="1945" max="1991" value="1945" class="slider" id="yearSlider">
+        <p>Year: <span id="selectedYear">1945</span></p>
+    </div>
+
+    <script src="java.js"></script>
+
+    <main>
+        <h3>Explore critical events of the Cold War.</h3>
+    </main>
+</body>
+
+</html>
